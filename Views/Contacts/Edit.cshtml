@@ -1,0 +1,62 @@
+﻿@model ContactBook.Models.Contacts
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Contacts</h4>
+<hr />
+
+<div class="container">
+    <div class="row">
+        <a class="btn btn-secondary" asp-action="Index">Back to List</a>
+    </div>
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="CID" />
+        <div class="form-group">
+            <label asp-for="FName" class="control-label"></label>
+            <input asp-for="FName" class="form-control" />
+            <span asp-validation-for="FName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="LName" class="control-label"></label>
+            <input asp-for="LName" class="form-control" />
+            <span asp-validation-for="LName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Email" class="control-label"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Cell" class="control-label"></label>
+            <input asp-for="Cell" class="form-control" />
+            <span asp-validation-for="Cell" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Facebook" class="control-label"></label>
+            <input asp-for="Facebook" class="form-control" />
+            <span asp-validation-for="Facebook" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="PermanentAddress" class="control-label"></label>
+            <input asp-for="PermanentAddress" class="form-control" />
+            <span asp-validation-for="PermanentAddress" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+
+
+ 
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
